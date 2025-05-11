@@ -1,4 +1,5 @@
 ﻿using KPZ_MKR1.Command;
+using KPZ_MKR1.State;
 using static KPZ_MKR1.LightElementNode;
 
 namespace KPZ_MKR1
@@ -86,6 +87,15 @@ namespace KPZ_MKR1
             invoker.StoreAndExecute(addClassCommand);
             invoker.StoreAndExecute(addChildCommand);
             Console.WriteLine(newh1Node.OuterHTML());
+
+            Console.WriteLine("\nТестування станів:");
+            newh1Node.Render();
+            Console.WriteLine("Зміна на ActiveState:");
+            newh1Node.CurrentState = new ActiveState();
+            newh1Node.Render();
+
+
+
         }
     }
 }
