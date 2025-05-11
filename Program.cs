@@ -1,4 +1,6 @@
-﻿namespace KPZ_MKR1
+﻿using static KPZ_MKR1.LightElementNode;
+
+namespace KPZ_MKR1
 {
     internal class Program
     {
@@ -41,6 +43,25 @@
             Console.WriteLine("\nТестування подій:");
             h1Node.TriggerEvent("click");
             divNode.TriggerEvent("mouseover");
+
+
+
+            Console.WriteLine("\nОбхід в глибину:");
+            var dfs = divNode.GetIterator(TraversalType.DepthFirst);
+            while (dfs.HasNext())
+            {
+                var node = dfs.Next();
+                Console.WriteLine($"- {node.OuterHTML()}");
+            }
+
+            Console.WriteLine("\nОбхід в ширину:");
+            var bfs = divNode.GetIterator(TraversalType.BreadthFirst);
+            while (bfs.HasNext())
+            {
+                var node = bfs.Next();
+                Console.WriteLine($"- {node.OuterHTML()}");
+            }
+
 
         }
     }

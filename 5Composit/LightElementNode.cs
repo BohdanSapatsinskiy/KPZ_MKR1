@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace KPZ_MKR1
 {
+    using KPZ_MKR1.Iterator;
     using System;
     using System.Collections.Generic;
 
@@ -81,7 +82,29 @@ namespace KPZ_MKR1
             }
 
             return string.Join("", innerContent);
+         }
+
+        
+        
+        
+        //Отримання ітераторів
+        public enum TraversalType
+        {
+            DepthFirst,
+            BreadthFirst
         }
+
+        public ILightNodeIterator GetIterator(TraversalType type)
+        {
+            return type switch
+            {
+                TraversalType.DepthFirst => new DepthFirstIterator(this),
+                TraversalType.BreadthFirst => new BreadthFirstIterator(this),
+                _ => throw new ArgumentException("Unknown traversal type")
+            };
+        }
+
+
     }
 }
 
