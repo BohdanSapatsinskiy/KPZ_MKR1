@@ -8,6 +8,7 @@ namespace KPZ_MKR1
 {
     using KPZ_MKR1.Iterator;
     using KPZ_MKR1.State;
+    using KPZ_MKR1.Visitor;
     using System;
     using System.Collections.Generic;
 
@@ -21,6 +22,10 @@ namespace KPZ_MKR1
         private Dictionary<string, Action> EventListeners { get; } = new Dictionary<string, Action>();
         public IElementState CurrentState { get; set; }
 
+        public override void Accept(INodeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
 
 
         public LightElementNode(string tagName, bool isBlock, bool isSelfClosing)

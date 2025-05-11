@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KPZ_MKR1.Visitor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace KPZ_MKR1
 {
     public abstract class LightNode
     {
+        // Відвідувач елементів
+        public abstract void Accept(INodeVisitor visitor);
+
         // Хуки життєвого циклу
         public virtual void OnCreated() { }
         public virtual void OnInserted() { }

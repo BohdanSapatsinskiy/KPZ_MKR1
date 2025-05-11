@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KPZ_MKR1.Visitor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,11 @@ namespace KPZ_MKR1
     {
         public string Src { get; }
         public string Alt { get; }
+
+        public override void Accept(INodeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
 
         public LightImageNode(string src, string alt = "")
         {
