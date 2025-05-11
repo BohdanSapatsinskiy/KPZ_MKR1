@@ -1,5 +1,6 @@
 ﻿using KPZ_MKR1.Command;
 using KPZ_MKR1.State;
+using KPZ_MKR1.Visitor;
 using static KPZ_MKR1.LightElementNode;
 
 namespace KPZ_MKR1
@@ -94,8 +95,13 @@ namespace KPZ_MKR1
             newh1Node.CurrentState = new ActiveState();
             newh1Node.Render();
 
-
-
+            Console.WriteLine("\nТестування відвідувача:");
+            var counter = new ElementCounter();
+            h1Node.Accept(counter);
+            Console.WriteLine($"Кількість елементів в h1: {counter.Count}");
+            var counter2 = new ElementCounter();
+            divNode.Accept(counter2);
+            Console.WriteLine($"Кількість елементів в div: {counter2.Count}");
         }
     }
 }
