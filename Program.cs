@@ -10,6 +10,7 @@ namespace KPZ_MKR1
 
             var h1Node = new LightElementNode("h1", false, false);
             h1Node.AddClass("tittle");
+
             var h1Text = new LightTextNode("Купити:");
             h1Node.AddChild(h1Text);
 
@@ -62,7 +63,17 @@ namespace KPZ_MKR1
                 Console.WriteLine($"- {node.OuterHTML()}");
             }
 
+            // Тестування хуків життєвого циклу
+            Console.WriteLine("\nТестування хуків життєвого циклу:");
+            h1Node.OnCreated();    
+            h1Node.OnInserted();   
+            divNode.OnCreated();   
+            divNode.OnInserted();
 
+            h1Node.OnStylesApplied();    
+            h1Node.OnClassListApplied(); 
+            divNode.OnStylesApplied();
+            divNode.OnClassListApplied();
         }
     }
 }

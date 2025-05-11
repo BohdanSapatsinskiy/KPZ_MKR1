@@ -27,16 +27,22 @@ namespace KPZ_MKR1
             IsSelfClosing = isSelfClosing;
             CssClasses = new List<string>();
             Children = new List<LightNode>();
+
+            Initialize();
         }
 
         public void AddClass(string cssClass)
         {
             CssClasses.Add(cssClass);
+
+            OnClassListApplied();
         }
 
         public void AddChild(LightNode child)
         {
             Children.Add(child);
+
+            OnInserted();
         }
 
         public void AddEventListener(string eventName, Action callback)
@@ -105,6 +111,37 @@ namespace KPZ_MKR1
         }
 
 
+
+        // Хуки життєвого циклу
+        public override void OnCreated()
+        {
+            Console.WriteLine($"Елемент {TagName} створений.");
+        }
+
+        public override void OnInserted()
+        {
+            Console.WriteLine($"Елемент {TagName} вставлений в дерево.");
+        }
+
+        public override void OnRemoved()
+        {
+            Console.WriteLine($"Елемент {TagName} видалений.");
+        }
+
+        public override void OnStylesApplied()
+        {
+            Console.WriteLine($"Стилі застосовані до {TagName}.");
+        }
+
+        public override void OnClassListApplied()
+        {
+            Console.WriteLine($"Класи застосовані до {TagName}: {string.Join(", ", CssClasses)}.");
+        }
+
+        public override void OnTextRendered()
+        {
+            Console.WriteLine($"Текст відрендерено для {TagName}.");
+        }
     }
 }
 
