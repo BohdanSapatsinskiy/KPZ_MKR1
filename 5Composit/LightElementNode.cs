@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace KPZ_MKR1
 {
     using KPZ_MKR1.Iterator;
+    using KPZ_MKR1.State;
     using System;
     using System.Collections.Generic;
 
@@ -17,8 +18,10 @@ namespace KPZ_MKR1
         public bool IsSelfClosing { get; }
         public List<string> CssClasses { get; }
         public List<LightNode> Children { get; }
-
         private Dictionary<string, Action> EventListeners { get; } = new Dictionary<string, Action>();
+        public IElementState CurrentState { get; set; }
+
+
 
         public LightElementNode(string tagName, bool isBlock, bool isSelfClosing)
         {
@@ -29,6 +32,14 @@ namespace KPZ_MKR1
             Children = new List<LightNode>();
 
             Initialize();
+
+            CurrentState = new InactiveState();
+        }
+
+        //Перевірка стану
+        public void Render()
+        {
+            CurrentState.Render(this);
         }
 
         public void AddClass(string cssClass)
