@@ -1,4 +1,5 @@
-﻿using static KPZ_MKR1.LightElementNode;
+﻿using KPZ_MKR1.Command;
+using static KPZ_MKR1.LightElementNode;
 
 namespace KPZ_MKR1
 {
@@ -74,6 +75,17 @@ namespace KPZ_MKR1
             h1Node.OnClassListApplied(); 
             divNode.OnStylesApplied();
             divNode.OnClassListApplied();
+
+
+            Console.WriteLine("\nТестування команд:");
+            var newh1Node = new LightElementNode("h1", false, false);
+            var addClassCommand = new AddClassCommand(newh1Node, "tittle");
+            var addChildCommand = new AddChildCommand(newh1Node, new LightTextNode("Hello World"));
+
+            var invoker = new CommandInvoker();
+            invoker.StoreAndExecute(addClassCommand);
+            invoker.StoreAndExecute(addChildCommand);
+            Console.WriteLine(newh1Node.OuterHTML());
         }
     }
 }
