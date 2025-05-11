@@ -1,0 +1,14 @@
+C:\Users\Sapat\source\repos\KPZ_MKR1\bin\Debug\net8.0\KPZ_MKR1.exe
+C:\Users\Sapat\source\repos\KPZ_MKR1\bin\Debug\net8.0\KPZ_MKR1.deps.json
+C:\Users\Sapat\source\repos\KPZ_MKR1\bin\Debug\net8.0\KPZ_MKR1.runtimeconfig.json
+C:\Users\Sapat\source\repos\KPZ_MKR1\bin\Debug\net8.0\KPZ_MKR1.dll
+C:\Users\Sapat\source\repos\KPZ_MKR1\bin\Debug\net8.0\KPZ_MKR1.pdb
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\KPZ_MKR1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\KPZ_MKR1.AssemblyInfoInputs.cache
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\KPZ_MKR1.AssemblyInfo.cs
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\KPZ_MKR1.csproj.CoreCompileInputs.cache
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\KPZ_MKR1.dll
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\refint\KPZ_MKR1.dll
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\KPZ_MKR1.pdb
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\KPZ_MKR1.genruntimeconfig.cache
+C:\Users\Sapat\source\repos\KPZ_MKR1\obj\Debug\net8.0\ref\KPZ_MKR1.dll
